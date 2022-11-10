@@ -1,6 +1,6 @@
 export function renderBeanieBabies(beanieBaby) {
     const beaniebabyEl = document.createElement('li');
-    beaniebabyEl.textContent = beanieBaby.title;
+    beaniebabyEl.classList.add('card');
 }
 
 export function renderAstrologySigns() {}
