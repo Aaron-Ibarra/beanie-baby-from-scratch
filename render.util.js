@@ -18,13 +18,13 @@ export function renderBeanieBabies(beanieBaby) {
     const animal = document.createElement('span');
     animal.textContent = beanieBaby.animal;
 
-    const subtheme = document.createElement('span');
-    subtheme.textContent = beanieBaby.subtheme;
+    const theme = document.createElement('span');
+    theme.textContent = beanieBaby.theme;
 
     const astroSign = document.createElement('span');
     astroSign.textContent = beanieBaby.astroSign;
 
-    attributes.append(animal, subtheme, astroSign);
+    attributes.append(animal, theme, astroSign);
 
     const released = document.createElement('p');
     released.classList.add('released');
@@ -37,4 +37,9 @@ export function renderBeanieBabies(beanieBaby) {
     return beaniebabyEl;
 }
 
-export function renderAstrologySigns() {}
+export function renderAstrologySigns(astroSign) {
+    const option = document.createElement('option');
+    option.value = astroSign.name;
+    option.textContent = astroSign.name;
+    return option;
+}
