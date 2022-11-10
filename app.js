@@ -19,12 +19,17 @@ window.addEventListener('load', async () => {
     displayAstroSigns();
 });
 
-async function findBeanieBabies() {
-    const response = await getBeanieBabies();
+async function findBeanieBabies(astro) {
+    const response = await getBeanieBabies(astro);
     beanieBabies = response.data;
     displayBeanieBabies();
 }
 
+beanieForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(beanieForm);
+    findBeanieBabies(formData.get('astro'));
+});
 /* Display Functions */
 function displayBeanieBabies() {
     beanieList.innerHTML = '';
@@ -35,8 +40,7 @@ function displayBeanieBabies() {
 }
 
 function displayAstroSigns() {
-    for (let astro of astroSelect) {
-        console.log(astro);
+    for (let astro of astroSigns) {
         const astroEl = renderAstrologySigns(astro);
         astroSelect.append(astroEl);
     }
