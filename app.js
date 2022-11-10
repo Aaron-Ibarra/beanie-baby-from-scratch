@@ -21,6 +21,7 @@ window.addEventListener('load', async () => {
 
 async function findBeanieBabies(astro) {
     const response = await getBeanieBabies(astro);
+    console.log(response);
     beanieBabies = response.data;
     displayBeanieBabies();
 }
@@ -28,7 +29,7 @@ async function findBeanieBabies(astro) {
 beanieForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const formData = new FormData(beanieForm);
-    findBeanieBabies(formData.get('astro'));
+    findBeanieBabies(formData.get('astro-pizza'));
 });
 /* Display Functions */
 function displayBeanieBabies() {
