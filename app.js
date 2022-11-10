@@ -13,6 +13,10 @@ let astroSigns = [];
 /* Events */
 window.addEventListener('load', async () => {
     findBeanieBabies();
+
+    const response = await getAstroSigns();
+    astroSigns = response.data;
+    displayAstroSigns();
 });
 
 async function findBeanieBabies() {
@@ -27,6 +31,14 @@ function displayBeanieBabies() {
     for (let beanieBaby of beanieBabies) {
         const beanieBabyEl = renderBeanieBabies(beanieBaby);
         beanieList.append(beanieBabyEl);
+    }
+}
+
+function displayAstroSigns() {
+    for (let astro of astroSelect) {
+        console.log(astro);
+        const astroEl = renderAstrologySigns(astro);
+        astroSelect.append(astroEl);
     }
 }
 
