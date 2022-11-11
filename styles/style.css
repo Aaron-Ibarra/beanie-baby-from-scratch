@@ -1,0 +1,17 @@
+.card {
+    background: white;
+    border: 1px solid lightgrey;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+
+    padding: 10px;
+    text-align: center;
+
+    display: grid;
+    align-content: space-between;
+    justify-items: center;
+}
+
+body {
+    cursor: url(/assets/ty-cursor.png), auto;
+    background-color: rgb(240, 195, 119);
+}
